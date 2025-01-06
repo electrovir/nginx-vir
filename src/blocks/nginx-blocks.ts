@@ -7,7 +7,7 @@ import type {UnionOmit} from '../augments/union-omit.js';
  * All raw Nginx block types. This includes a `context` property, which isn't used in block
  * definitions but is used in types here to determine which children each block can have.
  *
- * @category Internal.
+ * @category Internal
  */
 export type RawNginxBlock =
     | {
@@ -265,19 +265,19 @@ export type RawNginxBlock =
  * An Nginx building block for a site, config, or snippet. This is not complete: not all blocks are
  * supported yet. Request blocks to be added as they are needed.
  *
- * @category Block
+ * @category Nginx Blocks
  */
 export type NginxBlock = UnionOmit<RawNginxBlock, 'context'>;
 /**
  * All supported Nginx directives.
  *
- * @category Block
+ * @category Nginx Blocks
  */
 export type NginxBlockType = NginxBlock['type'];
 /**
  * Extract an Nginx block type by its block type.
  *
- * @category Block
+ * @category Nginx Blocks
  */
 export type NginxBlockByType<TypeName extends NginxBlockType> = UnionOmit<
     Extract<NginxBlock, {type: TypeName}>,

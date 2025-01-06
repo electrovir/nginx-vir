@@ -14,7 +14,8 @@ export const typeDocConfig: Partial<TypeDocOptions> = {
     intentionallyNotExported: [],
     defaultCategory: 'MISSING CATEGORY',
     categoryOrder: [
-        'Main',
+        'Site Control',
+        'Nginx Blocks',
         'Internal',
     ],
 };
